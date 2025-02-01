@@ -1,5 +1,23 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "resolveJsonModule": true, // allow importing JSON files
+    "removeComments": true, // remove comments from output
+    "strict": true,
+    "module": "ESNext",
+    "target": "ESNext",
+    "forceConsistentCasingInFileNames": true, // 要求文件名的大小写一致性。
+    "verbatimModuleSyntax": true, // ensure imports are used
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "baseUrl": ".", // 设置项目的基本路径，用于解析模块的相对路径。
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@store/*": ["src/store/*"],
+      "@images/*": ["src/images/*"],
+      "@/*": ["src/*"]
+    }
+  }
 }
